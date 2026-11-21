@@ -1,8 +1,8 @@
-# myDotfiles
+# my-dotfiles
 
 
 ## How to install
-cd ~ && mkdir 'Documents.nosync' && mkdir Documents.nosync/Projects && mkdir Documents.nosync/Projects/myDotfiles && cd Documents.nosync/Projects/myDotfiles && curl -#L https://github.com/TimVdWalle/myDotfiles/archive/master.zip | tar -xzv --strip-components 1 && chmod +x bootstrap.sh && ./bootstrap.sh
+cd ~ && mkdir 'Documents.nosync' && mkdir Documents.nosync/Projects && mkdir Documents.nosync/Projects/my-dotfiles && cd Documents.nosync/Projects/my-dotfiles && curl -#L https://github.com/TimVdWalle/my-dotfiles/archive/master.zip | tar -xzv --strip-components 1 && chmod +x bootstrap.sh && ./bootstrap.sh
 
 
 ## To do's during install
@@ -24,5 +24,5 @@ cd ~ && mkdir 'Documents.nosync' && mkdir Documents.nosync/Projects && mkdir Doc
 + Check if ZWSP is correct in starship pure prompt : does it show <200b> or correct ZWSP ?  
   ( ~/.config/starship.toml )
 + Do git init in every project where automatic conversion to emoji commit messages is wanted 
-+ Open fork; drag myDotfiles folder into it; discard all changes; checkout master branch from origin; fetch and pull
++ Open fork; drag my-dotfiles folder into it; discard all changes; checkout master branch from origin; fetch and pull
 + Setup AI in editor(s) eg Jetbrains Junie (link with chatGPT codex)
