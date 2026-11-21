@@ -23,7 +23,7 @@ else
     clone_repo "git@github.com:TimVdWalle/dart-score.git" "$PROJECTS/dart-score" "Cloning dart-score"
     clone_repo "git@github.com:TimVdWalle/commit-verbs.git" "$PROJECTS/commit-verbs" "Cloning commit-verbs"
     clone_repo "git@github.com:TimVdWalle/phpstan-watcher.git" "$PROJECTS/phpstan-watcher" "Cloning phpstan-watcher"
-    clone_repo "git@github.com:TimVdWalle/request_viewer.git" "$PROJECTS/request-viewer" "Cloning request-viewer"
+    clone_repo "git@github.com:TimVdWalle/request-viewer.git" "$PROJECTS/request-viewer" "Cloning request-viewer"
 fi
 
 # setup git hook script(s)
