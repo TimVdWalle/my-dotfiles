@@ -10,7 +10,8 @@ cd ~ && mkdir 'Documents.nosync' && mkdir Documents.nosync/Projects && mkdir Doc
 ### After installation of ohmyzsh
 + Type exit to make the install script continue
 
-### Logi options
+### Logitech Options+
++ Download and install Logi Options+ manually from https://www.logitech.com/software/logi-options-plus.html
 + Open app
 + Login to my account
 + Restore backup from ...

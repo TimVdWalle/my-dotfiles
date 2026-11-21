@@ -7,12 +7,12 @@ brew 'ccat'
 brew 'git'
 brew 'asdf'
 brew 'libyaml'
-brew 'openssl'
+brew 'openssl@3'
 brew 'readline'
 brew 'gmp'
 
 # tools
-cask 'logitech-options'
+# Logi Options+ is not available through Homebrew; install it manually from Logitech.
 
 # apps
 cask 'spotify'

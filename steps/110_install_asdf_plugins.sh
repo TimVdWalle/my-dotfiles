@@ -32,8 +32,14 @@ for plugin in "${plugins[@]}"; do
         print_success "asdf plugin $plugin already added."
     fi
     if [ "$plugin" = "ruby" ]; then
-        # Ensure libyaml and other dependencies from homebrew are used
-        export RUBY_CONFIGURE_OPTS="--with-libyaml-dir=$(brew --prefix libyaml) --with-openssl-dir=$(brew --prefix openssl) --with-readline-dir=$(brew --prefix readline) --with-gmp-dir=$(brew --prefix gmp)"
+        # Ensure libyaml and other dependencies from homebrew are used.
+        # Pin openssl@3: the unversioned alias can point to an OpenSSL major
+        # version that Ruby's openssl extension does not support yet.
+        export RUBY_CONFIGURE_OPTS="--with-libyaml-dir=$(brew --prefix libyaml) --with-openssl-dir=$(brew --prefix openssl@3) --with-readline-dir=$(brew --prefix readline) --with-gmp-dir=$(brew --prefix gmp)"
+    elif [ "$plugin" = "python" ]; then
+        # python-build probes openssl@1.1 by default, which Homebrew no longer
+        # provides. Restrict it to the version installed from the Brewfile.
+        export PYTHON_BUILD_HOMEBREW_OPENSSL_FORMULA="openssl@3"
     fi
     # Check if latest version is already installed to avoid redundant work and output
     latest_version=$(asdf latest "$plugin" 2>/dev/null)
