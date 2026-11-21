@@ -2,15 +2,9 @@
 source "./resources/utils.sh"
 source "./resources/utils-macos.sh"
 
-LARAVEL=~/Projects/Laravel/
-OTHER=~/Projects/Other/
-JS=~/Projects/JavaScript/
-RUBY=~/Projects/Ruby/
+PROJECTS=~/Projects
 
-mkd "$LARAVEL"
-mkd "$OTHER"
-mkd "$JS"
-mkd "$RUBY"
+mkd "$PROJECTS"
 
 clone_repo() {
     local url="$1"
@@ -26,19 +20,19 @@ clone_repo() {
 if [ "$IS_TESTING" = "true" ]; then
     :
 else
-    clone_repo "git@github.com:TimVdWalle/dart-score.git" "$LARAVEL/dart-score" "Cloning dart-score"
-    clone_repo "git@github.com:TimVdWalle/commit-verbs.git" "$OTHER/commit-verbs" "Cloning commit-verbs"
-    clone_repo "git@github.com:TimVdWalle/phpstan-watcher.git" "$JS/phpstan-watcher" "Cloning phpstan-watcher"
-    clone_repo "git@github.com:TimVdWalle/request_viewer.git" "$RUBY/request-viewer" "Cloning request-viewer"
+    clone_repo "git@github.com:TimVdWalle/dart-score.git" "$PROJECTS/dart-score" "Cloning dart-score"
+    clone_repo "git@github.com:TimVdWalle/commit-verbs.git" "$PROJECTS/commit-verbs" "Cloning commit-verbs"
+    clone_repo "git@github.com:TimVdWalle/phpstan-watcher.git" "$PROJECTS/phpstan-watcher" "Cloning phpstan-watcher"
+    clone_repo "git@github.com:TimVdWalle/request_viewer.git" "$PROJECTS/request-viewer" "Cloning request-viewer"
 fi
 
 # setup git hook script(s)
-if [ -f "$OTHER/commit-verbs/git-templates/hooks/prepare-commit-msg" ]; then
-  chmod +x "$OTHER/commit-verbs/git-templates/hooks/prepare-commit-msg"
+if [ -f "$PROJECTS/commit-verbs/git-templates/hooks/prepare-commit-msg" ]; then
+  chmod +x "$PROJECTS/commit-verbs/git-templates/hooks/prepare-commit-msg"
   # Only set if it's not already set
   current_template=$(git config --global init.templateDir)
-  if [ "$current_template" != "$OTHER/commit-verbs/git-templates" ]; then
-    git config --global init.templateDir "$OTHER/commit-verbs/git-templates"
+  if [ "$current_template" != "$PROJECTS/commit-verbs/git-templates" ]; then
+    git config --global init.templateDir "$PROJECTS/commit-verbs/git-templates"
   fi
 fi
 

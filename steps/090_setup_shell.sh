@@ -2,7 +2,7 @@
 source "./resources/utils.sh"
 source "./resources/utils-macos.sh"
 
-# Oh-my-zsh (using curl directly if you prefer it outside antigen)
+# Oh-my-zsh
 if [ -d ~/.oh-my-zsh ]; then
     print_success "oh-my-zsh is already installed."
 else
@@ -11,7 +11,7 @@ else
     sh -c "CHSH=no RUNZSH=no $(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
-# Ensure .zshrc exists (at least an empty one) so it can be used for oh-my-zsh/antigen
+# Ensure .zshrc exists (at least an empty one) so it can be used for oh-my-zsh
 if [ ! -f ~/.zshrc ]; then
     touch ~/.zshrc
 fi
@@ -24,14 +24,6 @@ if ! cmd_exists "starship"; then
 fi
 
 # Note: starship.toml configuration is handled in step 400 (symlinked from repo)
-
-# antigen and other tools should already be installed via Brewfile
-# We check if antigen exists in common brew paths if not in PATH
-if ! cmd_exists "antigen" && [ ! -f "/opt/homebrew/bin/antigen" ] && [ ! -f "/usr/local/bin/antigen" ] && [ ! -f "/opt/homebrew/share/antigen/antigen.zsh" ] && [ ! -f "/usr/local/share/antigen/antigen.zsh" ]; then
-    print_warning "Antigen not found. Check your Brewfile installation."
-fi
-
-
 
 # Initial setup for asdf if installed via homebrew
 if [ -f "$HOME/.asdf/asdf.sh" ]; then

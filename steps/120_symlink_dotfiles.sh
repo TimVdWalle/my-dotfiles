@@ -9,7 +9,7 @@ dotfiles_dir="$(cd "$(dirname "$0")/.." && pwd)/dotfiles"
 home_dir=~
 
 # List of dotfiles to potentially symlink
-list_of_dotfiles=(".hyper.js" ".zprofile" ".zshrc" ".antigenrc" ".config/starship.toml")
+list_of_dotfiles=(".hyper.js" ".zprofile" ".zshrc" ".config/starship.toml")
 
 # Special handling for starship.toml fallback
 starship_repo_path="$dotfiles_dir/.config/starship.toml"

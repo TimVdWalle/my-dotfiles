@@ -164,16 +164,6 @@ eval "$(starship init zsh)"
 #SPACESHIP_DIR_TRUNC_REPO=false
 
 
-# Antigen configuration
-if [ -n "$HOMEBREW_PREFIX" ] && [ -f "$HOMEBREW_PREFIX/share/antigen/antigen.zsh" ]; then
-    source "$HOMEBREW_PREFIX/share/antigen/antigen.zsh"
-elif [ -f "/usr/local/share/antigen/antigen.zsh" ]; then
-    source "/usr/local/share/antigen/antigen.zsh"
-fi
-
-#antigen init $HOME/.antigenrc
-
-
 #############################################
 #
 #   the fuck
